@@ -1,0 +1,15 @@
+{
+  "name": "notes-app",
+  "version": "1.0.0",
+  "description": "udemy node.js course",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "saptarshi",
+  "license": "ISC",
+  "dependencies": {
+    "add-lib-96": "^1.1.0",
+    "validator": "^13.9.0"
+  }
+}
