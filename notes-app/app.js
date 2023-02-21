@@ -1,8 +1,9 @@
 
-const getNotes = require('./notes.js')
+const notes = require('./notes.js')
 const validator = require('validator')
 const chalk =  require('chalk')
 const yargs = require('yargs')
+const { addNotes } = require('./notes.js')
 /*
 class-1..
 const fs = require('fs')
@@ -37,7 +38,7 @@ yargs.command({
     builder:{
             title:{
                 describe:'add Note',
-                demandOption : true,
+                   demandOption : true,
                 type : 'string'
             },
             body:{
@@ -48,8 +49,7 @@ yargs.command({
 
     },
     handler: function(argv){
-        console.log('note:' + argv.title)
-        console.log('note-body' + argv.body)       
+       addNotes(argv.title,argv.body)    
     }
 })
 yargs.command({
