@@ -6,17 +6,27 @@ const setNotes =  function (){
 
 const addNotes = function (title,body){
 const notes = loadNotes()
-notes.push({
-    title:"data",
-    body:"this is body"
+const duplicateNote = notes.filter(function (note){
+    return note.title === title
 })
-saveNotes(JSON.stringify(notes))
+if(duplicateNote.length === 0){
+    notes.push({
+        title:title,
+        body:body
+    })
+    saveNotes(notes)
+    console.log('new Note added')
+    
+}
+else{
+    console.log('note title taken!')
+}
 
 }
 
 const loadNotes =  function(){
     try{
-        const loadNote =  fs.readFileSync('./notes.json')
+        const loadNote =  fs.readFileSync('notes.json')
         const data = loadNote.toString()
         return JSON.parse(data)
     }
@@ -26,6 +36,8 @@ const loadNotes =  function(){
     
 }
 const saveNotes = function (notes){
+    const addData = JSON.stringify(notes)
+    fs.writeFileSync('notes.json',addData)
 
 }
 

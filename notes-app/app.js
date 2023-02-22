@@ -3,7 +3,7 @@ const notes = require('./notes.js')
 const validator = require('validator')
 const chalk =  require('chalk')
 const yargs = require('yargs')
-const { addNotes } = require('./notes.js')
+
 /*
 class-1..
 const fs = require('fs')
@@ -49,7 +49,7 @@ yargs.command({
 
     },
     handler: function(argv){
-       addNotes(argv.title,argv.body)    
+     notes.addNotes(argv.title,argv.body)    
     }
 })
 yargs.command({
@@ -61,7 +61,7 @@ yargs.command({
 })
 yargs.command({
     command:'read',
-    describe:'read note from list',
+    describe:'read note from list', 
     handler: function(){
         console.log(' read note..')
     }
