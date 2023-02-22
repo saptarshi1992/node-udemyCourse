@@ -39,7 +39,7 @@ yargs.command({
             title:{
                 describe:'add Note',
                    demandOption : true,
-                type : 'string'
+                type : 'string' 
             },
             body:{
                 describe:'thsi is note body',
@@ -55,8 +55,15 @@ yargs.command({
 yargs.command({
     command:'remove',
     describe:'remove note from my list',
-    handler: function(){
-        console.log('remove note...')
+    builder:{
+        title:{
+            describe:'remove note',
+            demandOption:true,
+            type: 'string'
+        }
+    },
+    handler: function(argv){
+        notes.removeNotes(argv.title)
     }
 })
 yargs.command({
